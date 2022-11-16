@@ -1,0 +1,24 @@
+
+<%- include('partials/header') %> 
+
+<h1>Home</h1>
+
+<p><%= homeContent %> </p>
+
+<% postData.forEach(function(obj){%> 
+
+  <h1><%= obj.title %> </h1>
+  <p>
+    
+    <%= obj.post.substring(0,100)+" ..." %>
+  
+    <%# var url = "/posts/"+ obj.title.toLowerCase().replace(" ","-") %> 
+    <% var url = "/posts/"+ obj._id %> 
+
+    <a style="color: blue;" href= <%= url %>  >Read More</a>
+
+    </p>
+
+<% }); %> 
+
+<%- include('partials/footer') %> 
